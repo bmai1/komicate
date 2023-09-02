@@ -33,3 +33,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# macOS
+Icon?
+![iI]con[_a-zA-Z0-9]
