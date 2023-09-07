@@ -7,6 +7,6 @@ stuff used:
 - node.js
 
 to implement: 
-- socket.io
-- prisma
-- mongodb / mysql
+- socket.io (client server comms)
+- prisma (node ts ORM)
+- mongodb / mysql (database)
