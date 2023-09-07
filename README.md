@@ -5,3 +5,8 @@ stuff used:
 - tailwind (utility css framework)
 - shadcn (ui components)
 - node.js
+
+to implement: 
+- socket.io
+- prisma
+- mongodb / mysql
