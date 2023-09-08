@@ -1,0 +1,7 @@
+npx create-next-app@latest my-app --typescript --tailwind --eslint
+npm init playwright@latest
+npx shadcn-ui@latest init
+npx shadcn-ui@latest add button
+npx shadcn-ui@latest add dropdown-menu
+npm install @clerk/nextjs
+npm install next-themes 
