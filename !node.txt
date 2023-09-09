@@ -3,8 +3,10 @@ npm init playwright@latest
 npx shadcn-ui@latest init
 npx shadcn-ui@latest add button
 npx shadcn-ui@latest add dropdown-menu
-npm install @clerk/nextjs
-npm install next-themes 
+npm i @clerk/nextjs
+npm i next-themes 
+npm i -D prisma
+npx prisma init
 
 ├── @clerk/nextjs@4.23.5
 ├── @playwright/test@1.37.1
@@ -22,6 +24,7 @@ npm install next-themes
 ├── next-themes@0.2.1
 ├── next@13.4.19
 ├── postcss@8.4.29
+├── prisma@5.2.0
 ├── react-dom@18.2.0
 ├── react@18.2.0
 ├── tailwind-merge@1.14.0
