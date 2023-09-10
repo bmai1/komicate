@@ -5,13 +5,14 @@ stuff used:
 - tailwind (utility css framework)
 - shadcn (ui components)
 - clerk (user authentication)
+- prisma (node ts ORM framework)
+- planetscale (database platform w/ prisma)
+- mysql (prisma schemas)
 - node.js
 
 to implement: 
 - socket.io (client server comms)
-- prisma (node ts ORM)
-- mongodb / mysql (database)
-- planetscale (serverless mysql platform)
+
 
 npm list: <br>
 ├── @clerk/nextjs@4.23.5 <br>
