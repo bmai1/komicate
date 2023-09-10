@@ -7,9 +7,10 @@ npm i @clerk/nextjs
 npm i next-themes 
 npm i -D prisma
 npx prisma init
-npx prisma generate
-npx prisma db push
+ > npx prisma generate
+ > npx prisma db push
 npm i @prisma/client
+npx prisma studio
 
 ├── @clerk/nextjs@4.23.5
 ├── @playwright/test@1.37.1
