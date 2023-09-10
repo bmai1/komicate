@@ -1,8 +1,11 @@
 npx create-next-app@latest my-app --typescript --tailwind --eslint
 npm init playwright@latest
 npx shadcn-ui@latest init
-npx shadcn-ui@latest add button
-npx shadcn-ui@latest add dropdown-menu
+> npx shadcn-ui@latest add button
+> npx shadcn-ui@latest add dropdown-menu
+> npx shadcn-ui@latest add dialog
+> npx shadcn-ui@latest add input
+> npx shadcn-ui@latest add form
 npm i @clerk/nextjs
 npm i next-themes 
 npm i -D prisma
