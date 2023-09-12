@@ -8,6 +8,7 @@ stuff used:
 - prisma (node ts ORM framework)
 - planetscale (database platform w/ prisma)
 - mysql (prisma schemas)
+- UploadThing (file uploads for next.js)
 - node.js
 
 to implement: 
