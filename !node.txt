@@ -12,9 +12,12 @@ npm i -D prisma
 npx prisma init
  > npx prisma generate
  > npx prisma db push
+ > npx prisma studio
 npm i @prisma/client
-npx prisma studio
 npm install uploadthing @uploadthing/react react-dropzone 
+npm i axios
+npm i uuid
+npm i -D @types/uuid
 
 ├── @clerk/nextjs@4.23.5
 ├── @playwright/test@1.37.1
