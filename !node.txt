@@ -21,6 +21,7 @@ npm install uploadthing @uploadthing/react react-dropzone
 npm i axios
 npm i uuid
 npm i -D @types/uuid
+npm i zustand
 
 ├── @clerk/nextjs@4.23.5
 ├── @playwright/test@1.37.1
