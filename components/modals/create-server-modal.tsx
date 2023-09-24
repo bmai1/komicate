@@ -24,7 +24,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { FileUpload } from "@/components/file-upload";
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import { useModal } from "@/hooks/use-modal-store";
 
 const formSchema = z.object({
@@ -56,10 +56,14 @@ export const CreateServerModal = () => {
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
         console.log(values);
         try {
-            await axios.post("/api/servers", values);
+            const response = await axios.post("/api/servers", values);
+            const newServerId = response.data.id;
             
             form.reset();
             router.refresh();
+            // redirect to new server
+            router.push(`/servers/${newServerId}`);
+            
             onClose();
         } catch (error) {
             console.log(error)
