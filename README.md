@@ -17,15 +17,18 @@ to implement:
 - socket.io (client server comms)
 
 
-npm list: <br>
-├── @clerk/nextjs@4.23.5<br>
+npm list:<br>
+├── @clerk/nextjs@4.23.5<br> 
 ├── @hookform/resolvers@3.3.1<br>
 ├── @playwright/test@1.37.1<br>
 ├── @prisma/client@5.2.0<br>
 ├── @radix-ui/react-dialog@1.0.4<br>
 ├── @radix-ui/react-dropdown-menu@2.0.5<br>
 ├── @radix-ui/react-label@2.0.2<br>
+├── @radix-ui/react-scroll-area@1.0.4<br>
+├── @radix-ui/react-separator@1.0.3<br>
 ├── @radix-ui/react-slot@1.0.2<br>
+├── @radix-ui/react-tooltip@1.0.6<br>
 ├── @types/node@20.5.8<br>
 ├── @types/react-dom@18.2.7<br>
 ├── @types/react@18.2.21<br>
@@ -52,5 +55,5 @@ npm list: <br>
 ├── typescript@5.2.2<br>
 ├── uploadthing@5.5.3<br>
 ├── uuid@9.0.1<br>
-└── zod@3.22.2
-
+├── zod@3.22.2<br>
+└── zustand@4.4.1<br>
