@@ -16,6 +16,7 @@ npx prisma init
  > npx prisma generate
  > npx prisma db push
  > npx prisma studio
+ > npx prisma migrate reset
 npm i @prisma/client
 npm install uploadthing @uploadthing/react react-dropzone 
 npm i axios
