@@ -24,6 +24,7 @@ npm i axios
 npm i uuid
 npm i -D @types/uuid
 npm i zustand
+npm i query-string
 
 ├── @clerk/nextjs@4.23.5
 ├── @hookform/resolvers@3.3.1
