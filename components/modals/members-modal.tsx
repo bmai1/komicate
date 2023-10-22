@@ -54,15 +54,38 @@ export const MembersModal = () => {
   const isModalOpen = isOpen && type == "members";
   const { server } = data as { server: ServerWithMembersWithProfiles };
 
+  const onKick = async (memberId: string) => {
+    try {
+      setLoadingId(memberId);
+      const url = qs.stringifyUrl({
+        // need start backslash
+        url: `/api/members/${memberId}`,
+        query: {
+          serverId: server?.id,
+        }
+      });
+      
+      const response = await axios.delete(url);
+
+      router.refresh();
+      onOpen("members", { server: response.data });
+
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoadingId("");
+    }
+  }
+
   const onRoleChange = async (memberId: string, role: MemberRole) => {
     try {
       setLoadingId(memberId);
       const url = qs.stringifyUrl({
-        url: `api/members/${memberId}`,
+        url: `/api/members/${memberId}`,
         query: {
           serverId: server?.id,
         }
-      })
+      });
 
       const response = await axios.patch(url, { role });
 
@@ -146,7 +169,10 @@ export const MembersModal = () => {
                         </DropdownMenuPortal>
                       </DropdownMenuSub>
                       <DropdownMenuSeparator />
-                      <DropdownMenuItem className="text-rose-400">
+                      <DropdownMenuItem 
+                        onClick={() => onKick(member.id)}
+                        className="text-rose-400"
+                      >
                         <Gavel 
                           className="h-4 w-4 mr-2"
                         /> 
@@ -156,7 +182,7 @@ export const MembersModal = () => {
                   </DropdownMenu>
                 </div>
               )}
-              {loadingId !== member.id && (
+              {loadingId === member.id && (
                 <Loader2 
                   className="animate-spin text-zinc-500 ml-auto w-4 h-4"
                 /> 
