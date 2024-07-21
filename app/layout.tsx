@@ -10,8 +10,8 @@ import { ModalProvider } from '@/components/providers/modal-provider'
 const font = Open_Sans({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'HMKO',
-  description: 'a testament to mine own lamentable state',
+  title: 'KomiCate',
+  description: 'Communication app',
 }
 
 export default function RootLayout({
@@ -22,6 +22,9 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
+        <head>
+          <link rel="icon" href="/komicon.png" type="image/png"/>
+        </head>
         <body className={cn(
           font.className, 
           "bg-white dark:bg-[#313338]"
