@@ -33,6 +33,10 @@ export const DeleteServerModal = () => {
 
       onClose();
       router.refresh();
+      
+      // add this line to refresh server sidebar immediately
+      window.location.reload();
+
       router.push("/");
     } catch (error) {
       console.log(error);

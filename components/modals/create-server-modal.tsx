@@ -61,6 +61,9 @@ export const CreateServerModal = () => {
             
             form.reset();
             router.refresh();
+
+            // add this line to refresh server sidebar immediately
+            window.location.reload();
             // redirect to new server
             router.push(`/servers/${newServerId}`);
             
