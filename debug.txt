@@ -1,0 +1,35 @@
+Start: npm run dev (http://localhost:3000)
+
+- Infinite Clerk redirect loop? 
+    - Cause: outdated version
+    - npm i next@latest react@latest react-dom@latest eslint-config-next@latest
+    - npm install @clerk/nextjs
+    - As of Jul 16, 2024: react 18.3.1 , clerk/nextjs ^4.31.3
+
+- PlanetScale (prisma, MySQL) free tier deprecation
+    - Migrate to PostgreSQL (neondb) 
+    Prisma commands:
+    - npx prisma db pull -> pulls tables created manually from provider via sql editor (neon)
+    - npx prisma migrate dev --name add_cascade_delete -> sync prisma/schema.prisma with neon db
+
+- npm update: otherwise weird css behavior
+    - GET /_next/static/css/app/index.css.map 404 in 525ms
+
+Error occurred during query execution:
+ConnectorError(ConnectorError { 
+    user_facing_error: None, kind: QueryError(PostgresError { 
+        code: "42704", 
+        message: "type \"public.ChannelType\" does not exist", 
+        severity: "ERROR", 
+        detail: None, column: None, hint: None 
+    }), transient: false 
+})
+
+- This was because I used a separate ChannelType in the SQL schema model for Channel instead of using Enum separately.
+    - Manually create TYPE 
+    - On channel/server delete cascade
+    - Just revert to original schema, don't trust GPT
+
+
+- Server sidebar not updating after creation/deletion of servers
+    - Fix: window.location.reload() with form (server button) submission
