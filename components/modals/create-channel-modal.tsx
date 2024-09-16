@@ -38,7 +38,7 @@ import { useEffect } from "react";
 
 const formSchema = z.object({
     name: z.string().min(1, {
-        message: "Server name is required."
+        message: "Channel name is required."
     }).refine(
       name => name !== "general",
       {
