@@ -27,7 +27,8 @@ export const NavigationAction = () => {
                 </div>
             </button>
            </ActionTooltip>
-           <ActionTooltip
+           {/* Don't need explore button right now */}
+           {/* <ActionTooltip
             side="right"
             align="center"
             label="Explore Servers"
@@ -41,7 +42,7 @@ export const NavigationAction = () => {
                       />
                   </div>
               </button>
-           </ActionTooltip>
+           </ActionTooltip> */}
         </div>
     )
 }
