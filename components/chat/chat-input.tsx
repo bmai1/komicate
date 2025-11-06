@@ -5,6 +5,8 @@ import axois from "axios"
 import qs from "query-string"
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Upload } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 import {
     Form,
@@ -13,8 +15,8 @@ import {
     FormItem,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Smile, Upload } from "lucide-react";
 import { useModal } from "@/hooks/use-modal-store";
+import { EmojiPicker } from "@/components/emoji-picker";
 
 interface ChatInputProps {
     apiUrl: string;
@@ -34,6 +36,7 @@ export const ChatInput = ({
     type,
 }: ChatInputProps) => {
     const { onOpen } = useModal();
+    const router = useRouter();
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -52,6 +55,8 @@ export const ChatInput = ({
             });
 
             await axois.post(url, values);
+            form.reset();
+            router.refresh();
         } catch (error) {
             console.log(error);
         }
@@ -59,7 +64,7 @@ export const ChatInput = ({
 
     return (
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)}>
+        <form onSubmit={form.handleSubmit(onSubmit)} autoComplete="off">
             <FormField 
                 control={form.control}
                 name="content"
@@ -70,9 +75,9 @@ export const ChatInput = ({
                                 <button
                                     type="button"
                                     onClick={() => onOpen("messageFile", { apiUrl, query })}
-                                    className="absolute top-7 left-8 h-[24px] w-[24px] bg-zinc-500, dark:bg-zinc-400 hover:bg-zinc-600 dark:hover:bg-zinc-300 transition rounded-full p-1 flex items-center justify-center"
+                                    className="absolute top-7 left-8 h-[24px] w-[24px] bg-zinc-500, dark:bg-zinc-400 dark:hover:bg-zinc-600 hover:bg-zinc-300 transition rounded-full p-1 flex items-center justify-center"
                                 >
-                                    <Upload className="text-white dark:text-[#313338]" />
+                                    <Upload className="text-[#313338]" />
                                 </button>
                                 <Input 
                                     disabled={isLoading}
@@ -81,7 +86,7 @@ export const ChatInput = ({
                                     {...field}
                                 />
                                 <div className="absolute top-7 right-8">
-                                    <Smile />
+                                    <EmojiPicker onChange={(emoji: string) => field.onChange(`${field.value}${emoji}`)} />
                                 </div>
                             </div>
                         </FormControl>
