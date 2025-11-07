@@ -34,7 +34,7 @@ export const DeleteChannelModal = () => {
         query: {
           serverId: server?.id
         }
-      })
+      });
 
       await axios.delete(url);
 
