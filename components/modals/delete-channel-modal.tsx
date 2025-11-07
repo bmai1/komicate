@@ -45,7 +45,6 @@ export const DeleteChannelModal = () => {
       // add this line to refresh server sidebar immediately
       window.location.reload();
 
-      router.push("/");
     } catch (error) {
       console.log(error);
     } finally {
