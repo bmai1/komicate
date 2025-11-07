@@ -85,6 +85,11 @@ export const ChatItem = ({
                 url: `${socketUrl}/${id}`,
                 query: socketQuery,
             });
+
+            await axios.patch(url, values);
+
+            form.reset();
+            setIsEditing(false);
         } catch (error) {
             console.log(error);
         }
@@ -154,7 +159,7 @@ export const ChatItem = ({
                         <p className={cn("text-sm text-zinc-600 dark:text-zinc-300 font-light", deleted && "italic text-zinc-500 dark:zinc-400 text-xs mt-1")}>
                             {content}
                             {isUpdated && !deleted && (
-                                <span className="text-[10px] mx-2 text-zinc-500 dark:text-zinc-400">
+                                <span className="text-[8px] mx-1 text-zinc-500 dark:text-zinc-400">
                                     (edited)
                                 </span>
                             )}
