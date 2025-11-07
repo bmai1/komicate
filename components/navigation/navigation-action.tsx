@@ -20,10 +20,12 @@ export const NavigationAction = () => {
                 onClick={ () => onOpen("createServer") }
                 className="group flex items-center"
             >
-                <div className="flex mx-3 h-[48px] w-[48px] rounded-[24px] group-hover:rounded-[16px] transition-all overflow-hidden items-center justify-center bg-background dark:bg-neutral-700 group-hover:bg-emerald-500">
-                    <Plus 
-                    className="group-hover:text-white transition text-emerald-500 size={25}"
-                    />
+                <div className="flex mx-3 h-[48px] w-[48px] rounded-[16px] group-hover:rounded-[16px] transition-all overflow-hidden items-center justify-center bg-background dark:bg-neutral-800 group-hover:bg-rose-700">
+                    <div className="rounded-[24px] bg-neutral-700 dark:bg-neutral-200">
+                        <Plus 
+                        className="transition text-neutral-700 size={25}"
+                        />
+                    </div>
                 </div>
             </button>
            </ActionTooltip>

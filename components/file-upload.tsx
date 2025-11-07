@@ -28,7 +28,7 @@ export const FileUpload = ({
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 src={value}
                 alt="Upload"
-                className="rounded-full"   
+                className="rounded-[16px]"   
                 />
                 <button
                     onClick={() => onChange("")}
