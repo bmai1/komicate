@@ -6,8 +6,8 @@ export const SocketIndicator = () => {
     const { isConnected } = useSocket();
 
     if (!isConnected) {
-        return <div>Not connected</div>
+        return <div className="text-neutral-500">not connected</div>
     }
 
-    return <div>Connected</div>
+    return <div className="text-neutral-500">connected</div>
 }
