@@ -23,6 +23,7 @@ import { Button } from "@/components/ui/button"
 
 import { cn } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useModal } from "@/hooks/use-modal-store";
 
 const formSchema = z.object({
     content: z.string().min(1),
@@ -56,7 +57,7 @@ export const ChatItem = ({
     socketQuery,
 }: ChatItemProps) => {
     const [isEditing, setIsEditing] = useState(false);
-    const [isDeleting, setIsDeleting] = useState(false);
+    const { onOpen } = useModal();
 
     useEffect(() => {
         const handleKeyDown = (event: any) => {
@@ -156,7 +157,7 @@ export const ChatItem = ({
                     )}
 
                     {!isEditing && (
-                        <p className={cn("text-sm text-zinc-600 dark:text-zinc-300 font-light", deleted && "italic text-zinc-500 dark:zinc-400 text-xs mt-1")}>
+                        <p className={cn("text-sm text-zinc-600 dark:text-zinc-300 font-light", deleted && "italic text-zinc-500 dark:text-zinc-400 text-xs mt-1")}>
                             {content}
                             {isUpdated && !deleted && (
                                 <span className="text-[8px] mx-1 text-zinc-500 dark:text-zinc-400">
@@ -216,7 +217,10 @@ export const ChatItem = ({
                     )}
                     <ActionTooltip label="Delete">
                         <Trash 
-                            onClick={() => setIsDeleting(true)}
+                            onClick={() => onOpen("deleteMessage", {
+                                apiUrl: `${socketUrl}/${id}`,
+                                query: socketQuery,
+                            })}
                             className="cursor-pointer ml-auto w-4 h-4 text-zinc-500 hover:text-zinc-600 dark:hover:text-zinc-300 transition"
                         />
                     </ActionTooltip>
