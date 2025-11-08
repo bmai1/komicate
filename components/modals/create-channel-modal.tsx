@@ -89,6 +89,7 @@ export const CreateChannelModal = () => {
 
             form.reset();
             router.refresh();
+            // router.push("/"); push to newly created channel
             onClose();
         } catch (error) {
             console.log(error)
