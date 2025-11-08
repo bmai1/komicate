@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
 import { Message } from "@prisma/client";
 
-const MESSAGES_BATCH = 25;
+const MESSAGES_BATCH = 10;
 
 export async function GET(
     req: Request
