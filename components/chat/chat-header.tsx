@@ -4,6 +4,7 @@ import { db } from "@/lib/db"
 import { redirect } from "next/navigation";
 import { ChannelType } from "@prisma/client";
 import { SocketIndicator } from "@/components/providers/socket-indicator";
+import { ChatVideoButton } from "./chat-video-button";
 
 interface ChatHeaderProps {
     serverId: string;
@@ -56,7 +57,10 @@ export const ChatHeader = async ({
                 />
             )}
             <p className="dark:text-white">{name}</p>
-            <div className="ml-auto">
+            <div className="flex flex-row ml-auto">
+                {type === "conversation" && (
+                    <ChatVideoButton />
+                )}
                 <SocketIndicator />
             </div>
         </div>
