@@ -48,21 +48,22 @@ export const ChatHeader = async ({
     }
     
     return (
-        <div className="px-3 flex items-center h-12 border-neutral-200 dark:border-neutral-800 border-b-2">
-            {type === "channel" && channelType && iconMap[channelType] }
-            {type === "conversation" && (
-                <UserAvatar 
-                    src={imageUrl}
-                    className="h-8 w-8 md:h-8 md:w-8 mr-2"
-                />
-            )}
-            <p className="dark:text-white">{name}</p>
-            <div className="flex flex-row ml-auto">
-                {type === "conversation" && (
-                    <ChatVideoButton />
-                )}
-                <SocketIndicator />
-            </div>
-        </div>
+        <div></div>
+        // <div className="px-3 flex items-center h-12 border-neutral-200 dark:border-neutral-800 border-b-2">
+        //     {type === "channel" && channelType && iconMap[channelType] }
+        //     {type === "conversation" && (
+        //         <UserAvatar 
+        //             src={imageUrl}
+        //             className="h-8 w-8 md:h-8 md:w-8 mr-2"
+        //         />
+        //     )}
+        //     <p className="dark:text-white">{name}</p>
+        //     <div className="flex flex-row ml-auto">
+        //         {type === "conversation" && (
+        //             <ChatVideoButton />
+        //         )}
+        //         <SocketIndicator />
+        //     </div>
+        // </div>
     )
 }

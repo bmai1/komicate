@@ -64,7 +64,7 @@ export const ChatInput = ({
 
     return (
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} autoComplete="off">
+        <form onSubmit={form.handleSubmit(onSubmit)} autoComplete="off" className="w-[100%]">
             <FormField 
                 control={form.control}
                 name="content"

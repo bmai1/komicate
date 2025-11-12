@@ -42,7 +42,7 @@ const ChannelIdPage = async ({
     }
 
     return (
-        <div className="bg-white dark:bg-[#313338] flex flex-col h-full">
+        <div className="dark:bg-black/55 bg-gradient-to-br from-indigo-900/15 to-pink-900/15 flex flex-col h-full">
             <ChatHeader 
                 name={channel.name}
                 serverId={channel.serverId}
